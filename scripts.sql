@@ -135,7 +135,7 @@ Which three industries are in the top 4 on this list? How many jobs have been li
 SELECT *
 FROM data_analyst_jobs;
 
-SELECT domain AS industry, days_since_posting
+SELECT title, domain AS industry, days_since_posting
 FROM data_analyst_jobs
 WHERE domain IS NOT NULL
 GROUP BY domain, days_since_posting

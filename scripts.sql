@@ -108,11 +108,12 @@ ORDER BY avg_rating DESC;
 SELECT *
 FROM data_analyst_jobs;
 
-SELECT COUNT(title)
+SELECT COUNT(DISTINCT(title))
 FROM data_analyst_jobs
-WHERE title LIKE '%Analyst%';
-
---Q11_Answer: 1636
+WHERE title LIKE '%Analyst%'
+    OR title LIKE '%analyst%'
+    OR title LIKE '%ANALYST%';
+--Q11_Answer: 774
 
 --Q12 How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
 
@@ -136,13 +137,12 @@ Which three industries are in the top 4 on this list? How many jobs have been li
 SELECT *
 FROM data_analyst_jobs;
 
-
-SELECT title, skill, days_since_posting, domain
+SELECT count(*)
 FROM data_analyst_jobs
 WHERE days_since_posting > 21
     AND domain IS NOT NULL
     AND skill LIKE '%SQL%';
-
+    
 SELECT domain, count(title)
 FROM data_analyst_jobs
 WHERE days_since_posting > 21
@@ -157,7 +157,9 @@ Top 4 Industries:
 - Internet and Software: 62
 - Banks and Financial Services: 61
 - Consulting and Business Services: 57
+- Healthcare: 52
 */
 
 
-
+   
+    

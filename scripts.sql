@@ -101,7 +101,7 @@ WHERE review_count >5000
 GROUP BY company
 ORDER BY avg_rating DESC;
 
---Q10_Answer: Unilever
+--Q10_Answer: Unilever, 4.2. Answer 
 
 --Q11 Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
 
@@ -113,6 +113,7 @@ FROM data_analyst_jobs
 WHERE title LIKE '%Analyst%'
     OR title LIKE '%analyst%'
     OR title LIKE '%ANALYST%';
+
 --Q11_Answer: 774
 
 --Q12 How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
